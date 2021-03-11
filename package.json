@@ -1,0 +1,19 @@
+{
+  "name": "portfolioweb",
+  "version": "1.0.0",
+  "description": "RHT | My Portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "keywords": [
+    "RHT",
+    "RHTWEB",
+    "Portfolio"
+  ],
+  "author": "Rohit Singh",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
