@@ -89,6 +89,8 @@ main {
   margin: auto;
   border-radius: 50%;
   border: $secondary-color 3px solid;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 .bio {
@@ -129,6 +131,38 @@ main {
       @include easeOut;
     }
   }
+}
+
+// Contact page 
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+
+  div {
+    font-size: 1.5rem;
+    border: 3px #fff solid;
+    padding: 1rem 2rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+
+    &.icons a:hover {
+      color: $primary-color;
+    }
+  }
+
 }
 
 // Button Style 
