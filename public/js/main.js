@@ -5,10 +5,15 @@ const menuNav = document.querySelector('.menu-nav');
 const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
 
+const upArrow = document.querySelector('.up-arrow');
+
 // Set initial state of menu 
 let showMenu = false;
 
 menuBtn.addEventListener('click', toggleMenu);
+
+window.addEventListener('scroll', showUpArrow);
+
 
 function toggleMenu() {
   if(!showMenu) {
@@ -32,5 +37,15 @@ function toggleMenu() {
 
     // Set menu state 
     showMenu = false;
+  }
+}
+
+function showUpArrow() {
+  let y = window.scrollY;
+
+  if(y > 200){
+    upArrow.classList.add('showArrow');
+  } else {
+    upArrow.classList.remove('showArrow');
   }
 }

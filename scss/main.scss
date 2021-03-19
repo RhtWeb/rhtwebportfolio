@@ -3,6 +3,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -38,7 +39,7 @@ h1, h2, h3 {
 
  header {
    position: fixed;
-  //  z-index: 2;
+   z-index: 2;
    width: 100%;
  }
 
@@ -118,25 +119,46 @@ main {
 
 .projects {
   display: grid;
-  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
 
   .item{
     margin-bottom: 3rem;
+    position: relative;
     a {
       text-align: center;
+      &:hover{
+        opacity: 0.5;
+      }
+    
+    .img-description{
+      position: absolute;
+      top: 1em;
+      left: 0;
+      visibility: hidden;
+      font-weight: 700;
+      opacity: 0;
+      border: 2px solid red;
     }
+
+    &:hover .img-description{
+      visibility: visible;
+      opacity: 1;
+      @include easeOut;
+    }
+  }
   }
 
   img {
     width: 100%;
     border: 3px #fff solid;
-    
 
     &:hover {
       opacity: 0.5;
       border-color: $secondary-color;
       @include easeOut;
+
+
     }
   }
 }
@@ -196,6 +218,28 @@ main {
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;
+}
+
+.up-arrow {
+  position: fixed;
+  top: 83vh;
+  right: 1vw;
+  visibility: hidden;
+
+}
+
+.showArrow {
+  visibility: visible;
+  animation: jump 2s infinite linear;
+}
+
+@keyframes jump{
+  50%{
+    transform: translateY(15px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
 }
 
 // Footer 
