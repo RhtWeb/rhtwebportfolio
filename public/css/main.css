@@ -156,7 +156,8 @@ main {
 .about-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio'
+ 'job1 job2 job3';
   grid-gap: 30px; }
 
 .bio-image {
@@ -291,6 +292,10 @@ main {
     main .lg-heading {
       line-height: 1;
       margin-bottom: 2rem; }
+  #cv {
+    display: inline-block;
+    align-self: center;
+  }
   div.menu-branding, ul.menu-nav {
     float: none;
     width: 100%;
@@ -310,7 +315,11 @@ main {
       width: 150px;
       height: 150px; }
   .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-areas: 'bioimage'
+ 'bio'
+ 'job1'
+ 'job2'
+ 'job3';
     grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(2, 1fr); } }
